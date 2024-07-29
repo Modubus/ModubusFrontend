@@ -1,0 +1,14 @@
+<svg width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="28" cy="27.5" r="24.5" fill="#D2F5D2"/>
+<rect x="19.5" y="17" width="19" height="9" fill="#85E2FF"/>
+<rect x="19.5" y="26" width="19" height="9" fill="#141414"/>
+<path d="M36 16H21C19.6193 16 18.5 17.069 18.5 18.3876V33.6124C18.5 34.931 19.6193 36 21 36H36C37.3807 36 38.5 34.931 38.5 33.6124V18.3876C38.5 17.069 37.3807 16 36 16Z" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.5 25H38.5" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.5 32H21.5" stroke="#F4FFAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M35.5 32H34.5" stroke="#F4FFAE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.5 16V25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.5 37V39" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.5 24V26" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40.5 24V26" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36.5 39V37" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
