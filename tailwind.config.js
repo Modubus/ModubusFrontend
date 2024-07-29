@@ -3,11 +3,27 @@ export default {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     colors: {
+      lightGreen: "#D2F5D2",
       green: "#61DE5E",
-      busBlack : "#121212",
-      darkGray : "#1A1A1A",
+      busBlack: "#121212",
+      darkGray: "#1A1A1A",
+
       black: "#000",
       white: "#fff",
+    },
+    fontSize: {
+      Bold16: [
+        "1rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
+      Bold21: [
+        "1.3125rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
+      Regular18: [
+        "1.125rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
