@@ -2,6 +2,10 @@
 export default {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
+    screens: {
+      iPhone12Pro: "390px",
+      iPhone14ProMax: "430px",
+    },
     colors: {
       lightGreen: "#D2F5D2",
       green: "#61DE5E",
@@ -20,6 +24,10 @@ export default {
       ],
       Bold21: [
         "1.3125rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
+      Bold28: [
+        "1.75rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
       Regular12: [
