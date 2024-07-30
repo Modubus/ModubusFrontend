@@ -5,9 +5,9 @@ import { useState } from "react";
 import { selectedUserType } from "@src/types/onBoard/userType.type";
 import { useOnBoardFlow } from "@src/stackflow/onBoardStackFlow";
 
-interface SelectPageParams {
+type SelectPageParams = {
   type: "signIn" | "signUp";
-}
+};
 
 const SelectPage: ActivityComponentType<SelectPageParams> = ({
   params: { type },
@@ -18,10 +18,11 @@ const SelectPage: ActivityComponentType<SelectPageParams> = ({
     selectedUserType | undefined
   >(undefined);
   const startHandler = () => {
+    if (!clickedUserType) return;
     if (type === "signIn" && clickedUserType === "user")
       push("UserSignInPage", {});
     else if (type === "signUp" && clickedUserType === "user")
-      push("UserSignUpPage", {});
+      push("UserSignUpStep1Page", {});
     else if (type === "signIn" && clickedUserType === "driver")
       push("DriverSignInPage", {});
     else push("DriverSignUpPage", {});
@@ -47,7 +48,9 @@ const SelectPage: ActivityComponentType<SelectPageParams> = ({
         </section>
         <button
           onClick={startHandler}
-          className="bg-green h-[2.875rem] text-Bold16 text-black mb-[3.56rem] rounded-[1.4375rem] mx-[2rem]"
+          className={`bg-green h-[2.875rem] text-Bold16 text-black mb-[3.56rem] rounded-[1.4375rem] mx-[2rem]
+           ${!clickedUserType ? "!bg-darkGray text-mutegreen02" : ""}
+            `}
         >
           시작하기
         </button>

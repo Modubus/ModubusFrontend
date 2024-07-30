@@ -5,6 +5,8 @@ export default {
     colors: {
       lightGreen: "#D2F5D2",
       green: "#61DE5E",
+      mutegreen01: "#83B296",
+      mutegreen02: "#3B4A41",
       busBlack: "#121212",
       darkGray: "#1A1A1A",
 
@@ -20,6 +22,11 @@ export default {
         "1.3125rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Regular12: [
+        "0.75rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
+
       Regular18: [
         "1.125rem",
         { notItalic: true, fontWeight: 400, lineHeight: "normal" },
