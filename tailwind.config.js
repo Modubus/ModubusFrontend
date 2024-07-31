@@ -34,6 +34,10 @@ export default {
         "0.75rem",
         { notItalic: true, fontWeight: 400, lineHeight: "normal" },
       ],
+      Regular16: [
+        "1rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
 
       Regular18: [
         "1.125rem",
