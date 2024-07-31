@@ -16,9 +16,7 @@ export default function HomeButton({
       onClick={onClick}
     >
       <ImageWrapper>{children}</ImageWrapper>
-      <span className="text-Bold16 iPhone12Pro:text-Bold21 iPhone14ProMax:text-Bold28">
-        {value}
-      </span>
+      <span className="text-Bold16 text-[6.5vw]">{value}</span>
     </button>
   );
 }
