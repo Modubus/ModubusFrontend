@@ -13,7 +13,7 @@ export default {
       mutegreen02: "#3B4A41",
       busBlack: "#121212",
       darkGray: "#1A1A1A",
-
+      lightRed: "#FF0001",
       black: "#000",
       white: "#fff",
     },
