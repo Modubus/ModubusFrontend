@@ -1,7 +1,7 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 
-const EnrollCompanyCodePage = () => {
+const DriverEnrollCompanyCodePage = () => {
   return (
     <AppScreen>
       <div></div>
@@ -9,4 +9,4 @@ const EnrollCompanyCodePage = () => {
   );
 };
 
-export default EnrollCompanyCodePage;
+export default DriverEnrollCompanyCodePage;

@@ -1,7 +1,7 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 
-const SearchCompanyCodePage = () => {
+const DriverSearchCompanyCodePage = () => {
   return (
     <AppScreen>
       <div></div>
@@ -9,4 +9,4 @@ const SearchCompanyCodePage = () => {
   );
 };
 
-export default SearchCompanyCodePage;
+export default DriverSearchCompanyCodePage;
