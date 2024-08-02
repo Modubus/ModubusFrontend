@@ -23,8 +23,8 @@ const UserHomePage: ActivityComponentType = () => {
       backgroundColor="#121212"
       appBar={{ title: "", iconColor: "white", height: "3rem" }}
     >
-      <article className="w-full h-full flex flex-col items-center justify-between">
-        <section className="flex-1 flex flex-col w-full gap-[1.5rem] items-center justify-start px-[2rem]">
+      <article className="w-full h-full relative flex flex-col items-center justify-start">
+        <section className="flex flex-col w-full gap-[1.5rem] items-center justify-start px-[2rem]">
           <HomeButton value="실시간 버스 길찾기" onClick={findBusHandler}>
             <img src="/icons/user/busIcon.svg" alt="" />
           </HomeButton>
@@ -38,7 +38,7 @@ const UserHomePage: ActivityComponentType = () => {
             <img src="/icons/user/settingIcon.svg" alt="" />
           </HomeButton>
         </section>
-        <div className="w-full px-[2rem] mb-[2rem]">
+        <section className="w-full px-[2rem] mb-[2rem] absolute bottom-0">
           <button className="flex gap-[1.62rem] rounded-[0.625rem] py-[1.56rem] px-[1.44rem] bg-lightGreen w-full text-black">
             <img src="/icons/circleHelp.svg" alt="" />
             <div className="flex flex-col gap-[0.62rem]">
@@ -51,7 +51,7 @@ const UserHomePage: ActivityComponentType = () => {
               </div>
             </div>
           </button>
-        </div>
+        </section>
       </article>
     </AppScreen>
   );

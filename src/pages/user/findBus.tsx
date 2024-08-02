@@ -14,7 +14,7 @@ export default function FindBusPage() {
             </button>
           ),
         },
-        title: <div className="text-Bold28 text-green mt-[0.5rem]">설정</div>,
+        title: <div className="text-Bold28 text-green mt-[0.5rem]">실시간 버스 길찾기</div>,
         iconColor: "white",
         height: "3rem",
       }}
