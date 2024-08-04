@@ -8,7 +8,6 @@ import UserSignUpStep2Page from "@src/pages/onBoard/(user)/signUp/SignUpStep2";
 import UserSignUpStep3Page from "@src/pages/onBoard/(user)/signUp/SignUpStep3";
 import SelectPage from "@src/pages/onBoard/SelectPage";
 import DriverEnterCompanyCodePage from "@src/pages/onBoard/(driver)/DriverEnterCompanyCode";
-import DriverSearchCompanyCodePage from "@src/pages/onBoard/(driver)/DriverSearchCompanyCode";
 
 export const { Stack: OnBoardStack, useFlow: useOnBoardFlow } = stackflow({
   transitionDuration: 350,
@@ -20,7 +19,6 @@ export const { Stack: OnBoardStack, useFlow: useOnBoardFlow } = stackflow({
     UserSignUpStep2Page,
     UserSignUpStep3Page,
     DriverEnterCompanyCodePage,
-    DriverSearchCompanyCodePage,
   },
   plugins: [
     basicRendererPlugin(),
