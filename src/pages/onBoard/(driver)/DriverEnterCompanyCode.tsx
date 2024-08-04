@@ -12,7 +12,7 @@ const DriverEnrollCompanyCodePage: ActivityComponentType<
   DriverEnrollCompanyCodePageParams
 > = ({ params: { searchCodeResult } }) => {
   const router = useNavigate();
-  const { push } = useOnBoardFlow();
+  const { push, pop } = useOnBoardFlow();
   const textClickHandler = () => {
     push("DriverSearchCompanyCodePage", {});
   };
@@ -21,6 +21,7 @@ const DriverEnrollCompanyCodePage: ActivityComponentType<
       router("/driver/home");
     }
   };
+  console.log(searchCodeResult);
   return (
     <AppScreen
       backgroundColor="#121212"
@@ -52,14 +53,9 @@ const DriverEnrollCompanyCodePage: ActivityComponentType<
           value={searchCodeResult}
           onClick={textClickHandler}
         />
-
         <button
-          className={`bg-green w-[100%] h-[2.875rem] text-Bold16 text-black rounded-[1.4375rem]
-           ${
-             !searchCodeResult
-               ? "!bg-darkGray text-mutegreen02 absolute bottom-[1.44rem] left-0"
-               : ""
-           }
+          className={`bg-green w-[100%] h-[2.875rem] text-Bold16 text-black rounded-[1.4375rem] absolute bottom-[1.44rem] left-0 
+           ${!searchCodeResult ? "!bg-darkGray text-mutegreen02 " : ""}
             `}
           onClick={startButtonClickHandler}
         >

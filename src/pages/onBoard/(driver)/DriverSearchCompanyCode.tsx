@@ -1,9 +1,11 @@
 import TextInput from "@src/components/basic/TextInput";
+import { useOnBoardFlow } from "@src/stackflow/onBoardStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useState } from "react";
 
 const DriverSearchCompanyCodePage = () => {
   const [text, setText] = useState("");
+  const { push } = useOnBoardFlow();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
@@ -18,7 +20,17 @@ const DriverSearchCompanyCodePage = () => {
             className="rounded-[0.625rem]"
           />
         </header>
-        <section className="bg-darkGray h-full"></section>
+        <section className="bg-darkGray h-full">
+          <div
+            onClick={() => {
+              push("DriverEnterCompanyCodePage", {
+                searchCodeResult: "999",
+              });
+            }}
+          >
+            example
+          </div>
+        </section>
       </article>
     </AppScreen>
   );
