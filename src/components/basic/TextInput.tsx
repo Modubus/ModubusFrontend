@@ -1,7 +1,8 @@
 import { textInputProps } from "@src/types/basic/textInput.type";
 
 export default function TextInput(option: textInputProps) {
-  const { placeholder, onChange, value, className, type } = option;
+  const { placeholder, onChange, onClick, value, className, type, readOnly } =
+    option;
   return (
     <input
       className={`
@@ -11,6 +12,8 @@ export default function TextInput(option: textInputProps) {
       value={value}
       onChange={onChange}
       type={type || "text"}
+      readOnly={readOnly}
+      onClick={onClick}
     />
   );
 }

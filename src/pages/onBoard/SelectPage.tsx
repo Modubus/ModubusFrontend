@@ -23,9 +23,8 @@ const SelectPage: ActivityComponentType<SelectPageParams> = ({
       push("UserSignInPage", {});
     else if (type === "signUp" && clickedUserType === "user")
       push("UserSignUpStep1Page", {});
-    else if (type === "signIn" && clickedUserType === "driver")
-      push("DriverSignInPage", {});
-    else push("DriverSignUpPage", {});
+    else if (clickedUserType === "driver")
+      push("DriverEnterCompanyCodePage", {});
   };
 
   return (
