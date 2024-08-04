@@ -7,8 +7,6 @@ import LightDisplayPage from "@src/pages/user/lightDisplay";
 import SetRequestPage from "@src/pages/user/setRequest";
 import SettingPage from "@src/pages/user/setting";
 
-
-
 export const { Stack: UserStack, useFlow: useUserFlow } = stackflow({
     transitionDuration: 350,
     activities: { UserHomePage, FindBusPage, LightDisplayPage, SetRequestPage, SettingPage },

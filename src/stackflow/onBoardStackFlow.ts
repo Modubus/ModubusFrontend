@@ -7,7 +7,7 @@ import UserSignUpStep1Page from "@src/pages/onBoard/(user)/signUp/SignUpStep1";
 import UserSignUpStep2Page from "@src/pages/onBoard/(user)/signUp/SignUpStep2";
 import UserSignUpStep3Page from "@src/pages/onBoard/(user)/signUp/SignUpStep3";
 import SelectPage from "@src/pages/onBoard/SelectPage";
-import DriverEnrollCompanyCodePage from "@src/pages/onBoard/(driver)/DriverEnterCompanyCode";
+import DriverEnterCompanyCodePage from "@src/pages/onBoard/(driver)/DriverEnterCompanyCode";
 import DriverSearchCompanyCodePage from "@src/pages/onBoard/(driver)/DriverSearchCompanyCode";
 
 export const { Stack: OnBoardStack, useFlow: useOnBoardFlow } = stackflow({
@@ -19,7 +19,7 @@ export const { Stack: OnBoardStack, useFlow: useOnBoardFlow } = stackflow({
     UserSignUpStep1Page,
     UserSignUpStep2Page,
     UserSignUpStep3Page,
-    DriverEnrollCompanyCodePage,
+    DriverEnterCompanyCodePage,
     DriverSearchCompanyCodePage,
   },
   plugins: [
