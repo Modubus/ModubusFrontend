@@ -22,6 +22,10 @@ export default {
         "1rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Bold18: [
+        "1.125rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
       Bold21: [
         "1.3125rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },

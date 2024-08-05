@@ -1,16 +1,24 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import ImageWrapper from "@src/components/basic/ImageWrapper";
+import { useDriveFlow } from "@src/stackflow/driverStackFlow";
 
 // home(버기)1, 초기 페이지 (버스 번호 등록 전)
 const DriverHomePage: ActivityComponentType = () => {
+  const { push } = useDriveFlow();
+  const onClickButton = () => {
+    push("EnrollBusPage", {});
+  };
   return (
     <AppScreen
       backgroundColor="#121212"
       appBar={{ title: "", iconColor: "white", height: "3rem" }}
     >
       <article className="w-full h-full flex flex-col items-cente justify-between px-[2rem]">
-        <button className="border flex gap-[1.62rem] w-full py-[1.12rem] px-[1.44rem] bg-lightGreen text-black rounded-[0.625rem]">
+        <button
+          className="border flex gap-[1.62rem] w-full py-[1.12rem] px-[1.44rem] bg-lightGreen text-black rounded-[0.625rem]"
+          onClick={onClickButton}
+        >
           <ImageWrapper>
             <img src="/icons/user/busIcon.svg" alt="" />
           </ImageWrapper>
