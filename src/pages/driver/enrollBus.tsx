@@ -2,10 +2,11 @@ import TextInput from "@src/components/basic/TextInput";
 import FilteredBusItem from "@src/components/driver/filteredBusItem";
 import { useDriveFlow } from "@src/stackflow/driverStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
+import { ActivityComponentType } from "@stackflow/react";
 import { useState } from "react";
 
 // home(버기)1, 버스 검색&등록 페이지
-export default function EnrollBusPage() {
+const EnrollBusPage: ActivityComponentType = () => {
   const [input, setInput] = useState("");
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -35,4 +36,6 @@ export default function EnrollBusPage() {
       </article>
     </AppScreen>
   );
-}
+};
+
+export default EnrollBusPage;

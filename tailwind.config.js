@@ -34,6 +34,10 @@ export default {
         "1.75rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Bold40: [
+        "2.5rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
       Bold170: [
         "10.625rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
@@ -49,6 +53,10 @@ export default {
 
       Regular18: [
         "1.125rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
+      Regular27: [
+        "1.6875rem",
         { notItalic: true, fontWeight: 400, lineHeight: "normal" },
       ],
     },
