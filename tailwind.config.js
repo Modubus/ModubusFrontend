@@ -34,6 +34,10 @@ export default {
         "1.75rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Bold30: [
+        "1.875rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
       Bold40: [
         "2.5rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
