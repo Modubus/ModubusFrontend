@@ -13,6 +13,7 @@ export default {
       mutegreen02: "#3B4A41",
       busBlack: "#121212",
       darkGray: "#1A1A1A",
+      warn: "#FF6869",
       lightRed: "#FF0001",
       black: "#000",
       white: "#fff",
@@ -22,12 +23,24 @@ export default {
         "1rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Bold18: [
+        "1.125rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
       Bold21: [
         "1.3125rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
       Bold28: [
         "1.75rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
+      Bold30: [
+        "1.875rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
+      Bold40: [
+        "2.5rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
       Bold170: [
@@ -45,6 +58,10 @@ export default {
 
       Regular18: [
         "1.125rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
+      Regular27: [
+        "1.6875rem",
         { notItalic: true, fontWeight: 400, lineHeight: "normal" },
       ],
     },
