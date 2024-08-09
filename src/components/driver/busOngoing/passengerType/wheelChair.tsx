@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function WheelChair() {
   return (
     <div className="px-[2.53rem] flex flex-col gap-[0.69rem]">

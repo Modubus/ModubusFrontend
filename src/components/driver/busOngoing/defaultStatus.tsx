@@ -1,8 +1,8 @@
 export default function DefaultStatus() {
   const dummyList = [
-    { station: "우창 아파트 정류장", number: 2 },
-    { station: "송파역 정류장", number: 1 },
-    { station: "구로구역 정류장", number: 3 },
+    { station: "우창 아파트 정류장", number: 2, description: "휠체어 사용자" },
+    { station: "송파역 정류장", number: 1, description: "휠체어 사용자" },
+    { station: "구로구역 정류장", number: 3, description: "휠체어 사용자" },
   ];
   return (
     <div className="mt-[4.5rem] px-[2rem] flex flex-col ">
@@ -14,7 +14,7 @@ export default function DefaultStatus() {
           <div className="flex flex-col gap-[0.44rem]">
             <div className="text-Bold28 text-lightGreen">{item.station}</div>
             <div className="text-Bold21 text-mutegreen01 text-left">
-              휠체어 사용자
+              {item.description}
             </div>
           </div>
           <div className="text-Bold28 text-green">{item.number + "명"}</div>
