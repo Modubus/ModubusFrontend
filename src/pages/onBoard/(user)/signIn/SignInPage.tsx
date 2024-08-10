@@ -4,6 +4,8 @@ import ImageWrapper from "@src/components/basic/ImageWrapper";
 import TextInput from "@src/components/basic/TextInput";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { useQuery } from "@tanstack/react-query";
+import { postRegister } from "@src/api/user/user/post";
 
 type UserSignInPageParams = {
   // title: string;
@@ -14,7 +16,22 @@ const UserSignInPage: ActivityComponentType<UserSignInPageParams> = () => {
     id: "",
     password: "",
   });
-  const onClickHandler = () => {
+  // const {
+  //   data: accessToken,
+  //   isPending,
+  //   isError,
+  //   error,
+  // } = useQuery({
+  //   queryKey: ["login"],
+  //   queryFn: () =>
+  //     postRegister({ username: signUpInfo.id, password: signUpInfo.password }),
+  // });
+  const onClickHandler = async () => {
+    const accessToken = await postRegister({
+      username: signUpInfo.id,
+      password: signUpInfo.password,
+    });
+    console.log(accessToken);
     router("/user/home");
   };
   return (
