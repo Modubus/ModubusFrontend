@@ -16,8 +16,10 @@
     "@stackflow/plugin-renderer-basic": "^1.1.8",
     "@stackflow/react": "^1.1.9",
     "@tanstack/react-query": "^5.51.15",
+    "axios": "^1.7.3",
     "crypto-random-string": "^5.0.0",
     "dotenv": "^16.4.5",
+    "qs": "^6.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.51.15",
+    "@types/qs": "^6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",

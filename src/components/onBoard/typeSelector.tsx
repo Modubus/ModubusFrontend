@@ -24,7 +24,7 @@ export default function TypeSelector({
           <img src="/images/onBoard/greenBgBus.svg" alt="" />
         )}
 
-        <div className="flex flex-col">
+        <div className="flex flex-col text-white">
           <span className="text-Bold21">버스 탑승객</span>
           <span className="text-Regular18">입니다.</span>
         </div>
