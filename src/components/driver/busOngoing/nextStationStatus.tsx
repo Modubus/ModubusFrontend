@@ -21,8 +21,9 @@ export default function NextStationStatus({
         {currentStationName}
       </div>
       {/* 승객 요청사항리스트 */}
-      <div className="flex flex-col gap-[0.94rem]">
+      <div className="flex flex-col gap-[0.94rem] h-[16rem] overflow-scroll">
         <WheelChair />
+        <SeatNeeded />
         <SeatNeeded />
       </div>
       <BottomNextStation
