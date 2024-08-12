@@ -8,7 +8,7 @@ export default function BottomNextStation({
 }: BottomNextStationProps) {
   return (
     <div className="fixed bottom-0 w-[100%]">
-      <div className="w-0 h-0 border-l-[50vw] border-r-[50vw] border-t-[30px] border-l-black border-r-black border-t-darkGray"></div>
+      <div className="w-0 h-0 border-l-[50vw] border-r-[50vw] border-t-[3.3rem] border-l-black border-r-black border-t-darkGray"></div>
       <div className="w-full flex px-[2rem] py-[2.19rem] items-center bg-black">
         <div className="flex flex-col gap-[0.44rem] flex-1">
           <div className="text-Bold28 text-lightGreen text-left">

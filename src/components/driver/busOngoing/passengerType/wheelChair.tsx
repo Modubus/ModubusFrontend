@@ -1,7 +1,7 @@
 export default function WheelChair() {
   return (
     <div className="px-[2.53rem] flex flex-col gap-[0.69rem]">
-      <div className="flex items-center gap-[0.62rem]">
+      <div className="flex items-center gap-[1.38rem]">
         <img src="/icons/driver/passengerType/wheelchair.svg" alt="" />
         <div className="text-Bold30 text-green grow text-left">
           휠체어 사용자

@@ -1,4 +1,5 @@
 import BottomNextStation from "./bottomNextStation";
+import SeatNeeded from "./passengerType/seatNeeded";
 import WheelChair from "./passengerType/wheelChair";
 type NextStationStatusProps = {
   currentStationName: string;
@@ -20,7 +21,11 @@ export default function NextStationStatus({
         {currentStationName}
       </div>
       {/* 승객 요청사항리스트 */}
-      <WheelChair />
+      <div className="flex flex-col gap-[0.94rem] h-[16rem] overflow-scroll scrollbar-hide pb-[4rem]">
+        <WheelChair />
+        <SeatNeeded />
+        <SeatNeeded />
+      </div>
       <BottomNextStation
         nextStationName={nextStationName}
         passengersCount={2}
