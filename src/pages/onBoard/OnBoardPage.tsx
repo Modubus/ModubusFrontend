@@ -1,25 +1,26 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-
-import ImageWrapper from "@src/components/basic/ImageWrapper";
-import OnBoardButton from "@src/components/onBoard/onBoardButton";
+import { useNavigate } from "react-router-dom";
 
 const OnBoardPage: ActivityComponentType = () => {
+  const router = useNavigate();
   return (
-    <AppScreen backgroundColor="#121212" appBar={{ title: "" }}>
+    <AppScreen appBar={{ title: "" }}>
       <article className="w-full h-full flex flex-col items-center">
-        <section className="flex-1 flex flex-col w-full items-center justify-between">
-          <div className="w-[16.0625rem] flex flex-col items-center gap-[4.25rem] mt-[6.81rem]">
-            <ImageWrapper>
-              <img src="images/onBoard/onBoardImg.svg" alt="" />
-            </ImageWrapper>
-            <div className="text-white text-center text-[1rem] leading-normal font-normal not-italic">
-              모두가 행복하게 버스를 타는 그날까지, 모두버스를 통해 버스를
-              탑승해보세요 !
-            </div>
-          </div>
-          <OnBoardButton></OnBoardButton>
-        </section>
+        <button
+          onClick={() => router("/user/home")}
+          className="bg-[#071124] text-white flex-1 flex flex-col w-full items-center justify-center"
+        >
+          <span className="text-Bold45">버스 탑승객</span>
+          <span className="text-Regular45">입니다.</span>
+        </button>
+        <button
+          onClick={() => router("/driver/home")}
+          className="flex-1 flex flex-col w-full items-center justify-center"
+        >
+          <span className="text-Bold45">버스 기사</span>
+          <span className="text-Regular45">입니다.</span>
+        </button>
       </article>
     </AppScreen>
   );

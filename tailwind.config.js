@@ -10,8 +10,10 @@ export default {
     colors: {
       lightGreen: "#D2F5D2",
       green: "#61DE5E",
-      mutegreen01: "#83B296",
+      busGreen: "#071124",
+      mutegreen01: "#E2E3EE",
       mutegreen02: "#3B4A41",
+      mutegreen03: "#727272",
       busBlack: "#121212",
       darkGray: "#1A1A1A",
       warn: "#FF6869",
@@ -44,6 +46,10 @@ export default {
         "2.5rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
       ],
+      Bold45: [
+        "2.8125rem",
+        { notItalic: true, fontWeight: 700, lineHeight: "normal" },
+      ],
       Bold170: [
         "10.625rem",
         { notItalic: true, fontWeight: 700, lineHeight: "normal" },
@@ -63,6 +69,10 @@ export default {
       ],
       Regular27: [
         "1.6875rem",
+        { notItalic: true, fontWeight: 400, lineHeight: "normal" },
+      ],
+      Regular45: [
+        "2.8125rem",
         { notItalic: true, fontWeight: 400, lineHeight: "normal" },
       ],
     },

@@ -14,7 +14,7 @@ export default function SetRequestPage() {
   );
   return (
     <AppScreen
-      backgroundColor="#121212"
+      backgroundColor="#ffffff"
       appBar={{
         backButton: {
           render: () => (
@@ -23,19 +23,22 @@ export default function SetRequestPage() {
             </button>
           ),
         },
-        title: (
-          <div className="text-Bold28 text-green mt-[0.5rem]">
-            요청사항 설정
-          </div>
-        ),
+        title: <div className="text-Bold40 mt-[0.5rem]">요청사항 선택</div>,
         iconColor: "white",
-        height: "3rem",
+        height: "3.5rem",
       }}
     >
-      <article className="mt-[1.31rem] px-[2rem]">
-        <section className="flex flex-col gap-[1.25rem]">
+      <article className="mt-[1.31rem] px-[1.25rem]">
+        <section className="flex flex-col gap-[1.56rem]">
           {contentData.map((content, idx) => (
             <ReqContent
+              setUserInput={(inputTitle: string) => {
+                setContentData((prev) => {
+                  const updatedContent = [...prev];
+                  updatedContent[contentData.length - 1].title = inputTitle; // 복사한 배열에서 값을 수정
+                  return updatedContent;
+                });
+              }}
               onSelect={() => {
                 setContentData((prev) =>
                   prev.map((prevContent, prevIdx) =>
@@ -47,6 +50,7 @@ export default function SetRequestPage() {
               }}
               key={idx}
               content={content}
+              userInput={idx == contentData.length - 1}
             ></ReqContent>
           ))}
         </section>

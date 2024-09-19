@@ -1,37 +1,55 @@
-import ImageWrapper from "@src/components/basic/ImageWrapper";
 import { ContentType } from "@src/types/user/setRequest/contentType.type";
 
 export default function ReqContent({
   content,
   onSelect,
+  userInput = false,
+  setUserInput,
 }: {
   content: { selected: boolean } & ContentType;
   onSelect: () => void;
+  userInput?: boolean;
+  setUserInput: (inputTitle: string) => void;
 }) {
   return (
-    <div className="bg-lightGreen p-[1.19rem] flex gap-[1.06rem] rounded-[0.625rem] text-black">
-      <button className="flex" onClick={onSelect}>
-        {content.selected ? (
+    <div className="flex items-center rounded-[2.625rem] text-black">
+      {content.selected ? (
+        <button
+          className="bg-busGreen flex w-full items-center rounded-[2.625rem] p-[1.19rem] border-[0.25rem]"
+          onClick={onSelect}
+        >
           <img src="/icons/user/setRequest/checked.svg" alt="" />
-        ) : (
-          <img src="/icons/user/setRequest/unchecked.svg" alt="" />
-        )}
-      </button>
-
-      <div className="flex-1 flex flex-col gap-[0.88rem]">
-        <div className="flex gap-[0.44rem]">
-          <ImageWrapper>
-            <img src={content.iconUrl} alt="" />
-          </ImageWrapper>
-          <span className="text-Bold21">{content.title}</span>
-        </div>
-        <div className="text-Regular16 text-start">{content.content}</div>
-        {content.warning && (
-          <div className="text-Regular12 text-lightRed text-start">
-            {content.warning}
+          <div className="flex w-full ms-[1.06rem]">
+            <span className="text-Bold45 text-white break-keep text-left">
+              {content.title}
+            </span>
           </div>
-        )}
-      </div>
+        </button>
+      ) : (
+        <div
+          className=" flex w-full items-center rounded-[2.625rem] p-[1.19rem] border-[0.25rem] border-[#B4B4B4]"
+          onClick={onSelect}
+        >
+          <img src="/icons/user/setRequest/unchecked.svg" alt="" />
+          {userInput ? (
+            <div className="flex w-full ms-[1.06rem]">
+              <input
+                onClick={(e) => e.stopPropagation()}
+                placeholder="직접 입력"
+                className="w-full outline-none text-Regular45 break-keep text-left"
+                onChange={(e) => setUserInput(e.target.value)}
+                value={content.title}
+              />
+            </div>
+          ) : (
+            <div className="flex w-full ms-[1.06rem]">
+              <span className="text-Regular45 break-keep text-left">
+                {content.title}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
