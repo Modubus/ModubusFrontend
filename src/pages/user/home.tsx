@@ -6,14 +6,15 @@ import { useUserFlow } from "@src/stackflow/userStackFlow";
 const UserHomePage: ActivityComponentType = () => {
   const { push } = useUserFlow();
   const findBusHandler = () => {
-    push("FindBusPage", {});
+    push("StartDestinationPage", {});
   };
   const setRequestHandler = () => {
     push("SetRequestPage", {});
   };
   const TextSettingHandler = () => {
-    push("LightDisplayPage", {});
+    push("TextSettingPage", {});
   };
+  // push("LightDisplayPage", {});
   const FavoriteHandler = () => {
     push("SettingPage", {});
   };

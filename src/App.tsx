@@ -27,6 +27,7 @@ function App() {
         <SplashScreen />
       ) : (
         <BrowserRouter>
+        
           <Routes>
             <Route path="/" element={<OnBoardStack />} />
             <Route path="/user/home" element={<UserStack />} />

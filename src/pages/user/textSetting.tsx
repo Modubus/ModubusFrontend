@@ -1,11 +1,11 @@
 import { useUserFlow } from "@src/stackflow/userStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 
-export default function FindBusPage() {
+export default function TextSettingPage() {
   const { pop } = useUserFlow();
   return (
     <AppScreen
-      backgroundColor="#121212"
+      backgroundColor="#ffffff"
       appBar={{
         backButton: {
           render: () => (
@@ -14,12 +14,12 @@ export default function FindBusPage() {
             </button>
           ),
         },
-        title: <div className="text-Bold28 text-green mt-[0.5rem]">실시간 버스 길찾기</div>,
+        title: <div className="text-Bold40 mt-[0.5rem]">글자크기 조절</div>,
         iconColor: "white",
-        height: "3rem",
+        height: "5rem",
       }}
     >
-      <div></div>
+      <article className="flex flex-col w-full h-full justify-start items-end"></article>
     </AppScreen>
   );
 }

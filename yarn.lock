@@ -213,6 +213,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.22.15":
+  version: 7.25.6
+  resolution: "@babel/runtime@npm:7.25.6"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/d6143adf5aa1ce79ed374e33fdfd74fa975055a80bc6e479672ab1eadc4e4bfd7484444e17dd063a1d180e051f3ec62b357c7a2b817e7657687b47313158c3d2
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.25.0":
   version: 7.25.0
   resolution: "@babel/template@npm:7.25.0"
@@ -1372,10 +1381,12 @@ __metadata:
     eslint: "npm:^8.57.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-react-refresh: "npm:^0.4.7"
+    immer: "npm:^10.1.1"
     postcss: "npm:^8.4.39"
     qs: "npm:^6.13.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
+    react-kakao-maps-sdk: "npm:^1.1.27"
     react-router-dom: "npm:^6.25.1"
     tailwind-scrollbar-hide: "npm:^1.1.7"
     tailwindcss: "npm:^3.4.6"
@@ -2406,6 +2417,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immer@npm:^10.1.1":
+  version: 10.1.1
+  resolution: "immer@npm:10.1.1"
+  checksum: 10c0/b749e10d137ccae91788f41bd57e9387f32ea6d6ea8fd7eb47b23fd7766681575efc7f86ceef7fe24c3bc9d61e38ff5d2f49c2663b2b0c056e280a4510923653
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -2616,6 +2634,13 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: 10c0/5a04eed94810fa55c5ea138b2f7a5c12b97c3750bc63d11e511dcecbfef758003861522a070c2272764ee0f4e3e323862f386945aeb5b85b87ee43f084ba586c
+  languageName: node
+  linkType: hard
+
+"kakao.maps.d.ts@npm:^0.1.39":
+  version: 0.1.40
+  resolution: "kakao.maps.d.ts@npm:0.1.40"
+  checksum: 10c0/16eef0d9846311921ae3c5c020a8769ab8d1f894b2a6f1aef869a83648462982c2891bc8ea174665345290483bf73feb6ae264273cee38a40a1adbb17aa6862f
   languageName: node
   linkType: hard
 
@@ -3286,6 +3311,19 @@ __metadata:
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 10c0/0bbd2f3eb41ab2ff7380daaa55105db698d965c396df73e6874831dbafec8c4b5b08ba36ff09df01526caa3c61595247e3269558c284e37646241cba2b90a367
+  languageName: node
+  linkType: hard
+
+"react-kakao-maps-sdk@npm:^1.1.27":
+  version: 1.1.27
+  resolution: "react-kakao-maps-sdk@npm:1.1.27"
+  dependencies:
+    "@babel/runtime": "npm:^7.22.15"
+    kakao.maps.d.ts: "npm:^0.1.39"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: 10c0/1cc0dd855f1b8c0ba3d089ada352ecab8569d5a6cd9344baebc3161cf64d0670ff633a422636289e549b42da6b38997ddb7a4d3ddf6b616f93f9b2e96e04eae1
   languageName: node
   linkType: hard
 
