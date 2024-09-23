@@ -1,13 +1,17 @@
 import { getStationEnd } from "@src/api/bus/get";
 import { useUserFlow } from "@src/stackflow/userStackFlow";
+import { usePlaceKeywordStore } from "@src/store/placeKeyword";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useQuery } from "@tanstack/react-query";
 export default function SelectBusPage() {
+  const {
+    data: { startKeyword, endKeyword },
+  } = usePlaceKeywordStore();
   const { pop } = useUserFlow();
   const { isPending, isError, error, data } = useQuery({
     queryKey: ["getStationEnd"],
     queryFn: () =>
-      getStationEnd({ startStation: "파주역", endStation: "강남역" }),
+      getStationEnd({ startStation: startKeyword, endStation: endKeyword }),
   });
   if (isPending) {
     // isLoading을 사용하여 데이터가 로딩중일 때 화면을 랜더링합니다.
@@ -35,7 +39,11 @@ export default function SelectBusPage() {
 
   if (isError) {
     // isError를 사용하여 error가 발생할 때 화면을 랜더링합니다.
-    return <div>Error: {error.message}</div>;
+    return (
+      <AppScreen backgroundColor="#ffffff">
+        <div>Error: {error?.message || "에러발생"}</div>;
+      </AppScreen>
+    );
   }
   return (
     <AppScreen backgroundColor="#ffffff">

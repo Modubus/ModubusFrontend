@@ -141,7 +141,6 @@ function KakaoFindPlace({ isStart = true }: { isStart?: boolean }) {
               key={index}
               className="item"
               onClick={() => {
-                setStartDestination(place.place_name);
                 if (keywordRef.current) {
                   keywordRef.current.value = place.place_name;
                   if (isStart) {
