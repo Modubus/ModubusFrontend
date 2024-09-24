@@ -144,10 +144,20 @@ function KakaoFindPlace({ isStart = true }: { isStart?: boolean }) {
                 if (keywordRef.current) {
                   keywordRef.current.value = place.place_name;
                   if (isStart) {
-                    setStartDestination(place.place_name, place.x, place.y);
+                    setStartDestination(
+                      place.place_name,
+                      place.x,
+                      place.y,
+                      place.address_name
+                    );
                     push("EndDestinationPage", {});
                   } else {
-                    setEndDestination(place.place_name, place.x, place.y);
+                    setEndDestination(
+                      place.place_name,
+                      place.x,
+                      place.y,
+                      place.address_name
+                    );
                     push("SelectBusPage", {});
                   }
                 }

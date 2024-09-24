@@ -5,13 +5,13 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useQuery } from "@tanstack/react-query";
 export default function SelectBusPage() {
   const {
-    data: { startKeyword, endKeyword },
+    data: { startDes, endDes },
   } = usePlaceKeywordStore();
   const { pop } = useUserFlow();
   const { isPending, isError, error, data } = useQuery({
     queryKey: ["getStationEnd"],
     queryFn: () =>
-      getStationEnd({ startStation: startKeyword, endStation: endKeyword }),
+      getStationEnd({ startStation: startDes, endStation: endDes }),
   });
   if (isPending) {
     // isLoading을 사용하여 데이터가 로딩중일 때 화면을 랜더링합니다.
@@ -64,8 +64,8 @@ export default function SelectBusPage() {
             <div>검색결과 없음</div>
           ) : (
             <div className="">
-              {data.map((d) => (
-                <div>
+              {data.map((d, idx) => (
+                <div key={idx}>
                   {d.busNumber}
                   {d.busType}
                 </div>
