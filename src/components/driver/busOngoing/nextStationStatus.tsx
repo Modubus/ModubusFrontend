@@ -1,6 +1,8 @@
 import BottomNextStation from "./bottomNextStation";
 import SeatNeeded from "./passengerType/seatNeeded";
-import WheelChair from "./passengerType/wheelChair";
+import SeatStart from "./passengerType/seatStart";
+import Slope from "./passengerType/Slope";
+import SlowRide from "./passengerType/slowRide";
 type NextStationStatusProps = {
   currentStationName: string;
   nextStationName: string;
@@ -10,26 +12,19 @@ export default function NextStationStatus({
   nextStationName = "송파역 정류장",
 }: NextStationStatusProps) {
   return (
-    <div className="relative">
-      <div className="mt-[2.62rem] text-Bold28 text-mutegreen01">
-        이번 정류장
-      </div>
-      <p className="text-Bold16 text-warn absolute top-[3.3rem] w-full">
-        <span className="text-Bold18">휠체어 사용자 1명 </span>하차합니다.
-      </p>
-      <div className="text-Bold40 text-white mt-[8.06rem] mb-[3.63rem]">
-        {currentStationName}
-      </div>
+    <section className="relative h-[calc(100vh-315px)] flex flex-col items-center justify-center gap-[2.19rem]">
+      <div className="text-Bold40">{currentStationName}</div>
       {/* 승객 요청사항리스트 */}
-      <div className="flex flex-col gap-[0.94rem] h-[16rem] overflow-scroll scrollbar-hide pb-[4rem]">
-        <WheelChair />
-        <SeatNeeded />
-        <SeatNeeded />
+      <div className="flex flex-col w-full gap-[1.06rem] h-full overflow-scroll scrollbar-hide px-[1.22rem] pb-[4rem]">
+        <SeatNeeded num={1} />
+        <Slope num={3} />
+        <SlowRide num={4} />
+        <SeatStart num={4} />
       </div>
       <BottomNextStation
         nextStationName={nextStationName}
         passengersCount={2}
       />
-    </div>
+    </section>
   );
 }

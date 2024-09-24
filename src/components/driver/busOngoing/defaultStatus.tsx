@@ -5,19 +5,16 @@ export default function DefaultStatus() {
     { station: "구로구역 정류장", number: 3, description: "휠체어 사용자" },
   ];
   return (
-    <div className="mt-[4.5rem] px-[2rem] flex flex-col ">
+    <div className="mt-[1.75rem] flex flex-col w-full px-[1.25rem] gap-[1.56rem]">
       {dummyList.map((item, idx) => (
-        <div
-          className="flex justify-between items-center py-[1.25rem] border-b-[0.0625rem] border-b-[#3B4A41]"
-          key={idx}
-        >
-          <div className="flex flex-col gap-[0.44rem]">
-            <div className="text-Bold28 text-lightGreen">{item.station}</div>
-            <div className="text-Bold21 text-mutegreen01 text-left">
-              {item.description}
-            </div>
+        <div className="rounded-[2.625rem] border-[4px] bg-black" key={idx}>
+          <div className="text-Bold28 text-left bg-black p-[0.88rem] rounded-t-[2.625rem] text-white">
+            {item.station}
           </div>
-          <div className="text-Bold28 text-green">{item.number + "명"}</div>
+          <div className="pt-[0.31rem] px-[0.87rem] pb-[0.87rem] bg-white rounded-b-[2.5rem]">
+            <div className="text-left text-Regular45">{item.description}</div>
+            <div className="text-left text-Bold45">{item.number + "명"}</div>
+          </div>
         </div>
       ))}
     </div>

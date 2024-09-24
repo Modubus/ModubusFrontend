@@ -35,13 +35,17 @@ const BusOngoingPage: ActivityComponentType = () => {
     ],
   };
   return (
-    <AppScreen backgroundColor="#1a1a1a">
+    <AppScreen backgroundColor="white">
       <Header busNumber={3317} />
-      <NextStationStatus />
       {/* TODO: polling되는 정보를 기반으로 아래 조건에 따른 조건부 렌더링 */}
       {/* 현재 위치 주변에 탑승객이 없을 떄: <NoPassenger/> */}
-      {/* 탑승객이 있는데 현재 위치가 다음 정류장이 아닐 떄 : <DefaultStatus/> */}
+      <DefaultStatus />
+      {/* <NoPassenger /> */}
       {/* 탑승객이 있는데 현재 위치가 다음 정류장일 때: <NextStationStatus /> */}
+      {/* <NextStationStatus
+        currentStationName="우창 아파트 정류장"
+        nextStationName="송파역 정류장"
+      /> */}
     </AppScreen>
   );
 };

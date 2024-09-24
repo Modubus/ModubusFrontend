@@ -21,6 +21,8 @@ export default {
       lightRed: "#FF0001",
       black: "#000",
       white: "#fff",
+      busColor: "#417FF9",
+      lightGrey: "#dbdbdb",
     },
     fontSize: {
       Bold16: [

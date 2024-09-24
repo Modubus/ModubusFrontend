@@ -3,13 +3,13 @@ type HeaderProps = {
 };
 export default function Header({ busNumber }: HeaderProps) {
   return (
-    <div className="w-full h-[3rem] text-[2.125rem] text-green font-bold relative">
-      {busNumber}
-      <img
-        className="absolute top-[0.5rem] right-[2rem]"
-        src="/icons/driver/busIcon.svg"
-        alt=""
-      />
-    </div>
+    <header className="w-full flex justify-between items-center px-[1.25rem] py-[0.25rem] rounded-[6.25rem]">
+      <div className="text-Bold45 bg-busColor px-[1.125rem] py-[0.6875rem]  text-white rounded-[10rem]">
+        {busNumber}
+      </div>
+      <div className="text-Regular45 bg-white px-[1.125rem] py-[0.6875rem] rounded-[6.25rem] border text-center">
+        변경
+      </div>
+    </header>
   );
 }
