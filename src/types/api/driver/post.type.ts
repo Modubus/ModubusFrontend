@@ -15,11 +15,13 @@ export type postBusNumRequest = {
   vehicleno: string;
 };
 
-export type postBusNumResponse = {
-  name: string;
-  id: number;
-  cityCode: number;
-};
+export type postBusNumResponse = Array<{
+  vehicleno: string;
+  routnm: string;
+  cityCode: string;
+  startnodenm: string;
+  endnodenm: string;
+}>;
 
 // 버스 정보를 보내주면 아이디 반환하기
 export type postBusInfoRequest = {
@@ -28,7 +30,5 @@ export type postBusInfoRequest = {
 };
 
 export type postBusInfoResponse = {
-  busID: number;
+  busId: number;
 };
-
-

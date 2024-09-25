@@ -2,12 +2,13 @@ import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import ImageWrapper from "@src/components/basic/ImageWrapper";
 import { useDriveFlow } from "@src/stackflow/driverStackFlow";
+import { busIdParamsType } from "./searchCode";
 
 // home(버기)1, 초기 페이지 (버스 번호 등록 전)
-const EnrollBusNum: ActivityComponentType = () => {
+const EnrollBusNum: ActivityComponentType<busIdParamsType> = ({ params }) => {
   const { push, pop } = useDriveFlow();
   const handleButtonClick = () => {
-    push("SearchBusNumPage", {});
+    push("SearchBusNumPage", { id: params.id, name: params.name });
   };
   return (
     <AppScreen backgroundColor="white">

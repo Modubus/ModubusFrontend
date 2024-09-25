@@ -3,29 +3,40 @@ import { useDriveFlow } from "@src/stackflow/driverStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { ActivityComponentType } from "@stackflow/react";
 import { useEffect, useRef, useState } from "react";
+import { busIdParamsType } from "./searchCode";
+import { postBusNum } from "@src/api/driver/post";
+import { postBusNumResponse } from "@src/types/api/driver/post.type";
 
-// home(버기)1, 버스 검색&등록 페이지
-const SearchBusNumPage: ActivityComponentType = () => {
+const SearchBusNumPage: ActivityComponentType<busIdParamsType> = ({
+  params,
+}) => {
   const [input, setInput] = useState<string>("");
   const { push } = useDriveFlow();
   const [isShowMatchResult, setIsShowMatchResult] = useState<boolean>(false);
-  const [busNumList, setBusNumList] = useState<string[]>([]);
-  const handleBusItemClick = () => {
-    push("SubmitBusInfoPage", {});
+  const [busNumList, setBusNumList] = useState<postBusNumResponse>([]);
+  const handleBusItemClick = (vehicleno: string) => {
+    push("SubmitBusInfoPage", {
+      id: params.id,
+      name: params.name,
+      vehicleno: vehicleno,
+    });
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
   const inputRef = useRef<HTMLInputElement | null>(null);
-  // const fetchMatchBusCompany = async () => {
-  //   //TODO: api 연동
-  //   renderSearchItem("관악교통");
-  // };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = async (
+    event: React.KeyboardEvent<HTMLInputElement>
+  ) => {
     if (event.key === "Enter") {
-      setBusNumList(["24나 2324"]);
-      setIsShowMatchResult(true);
+      const res = await postBusNum({
+        busCompanyId: params.id,
+        vehicleno: input,
+      });
+      if (res) {
+        setBusNumList(res.data);
+        setIsShowMatchResult(true);
+      }
     }
   };
   useEffect(() => {
@@ -44,14 +55,18 @@ const SearchBusNumPage: ActivityComponentType = () => {
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
         />
-        {isShowMatchResult && (
-          <div
-            className="w-full text-left text-Regular45 border-b-[1px] border-b-darkGray3 py-[1rem]"
-            onClick={handleBusItemClick}
-          >
-            {busNumList}
-          </div>
-        )}
+        {isShowMatchResult &&
+          busNumList.map((item) => (
+            <div
+              className="w-full text-left text-Regular45 border-b-[1px] border-b-darkGray3 py-[1rem]"
+              key={item.vehicleno}
+              onClick={() => {
+                handleBusItemClick(item.vehicleno);
+              }}
+            >
+              {item.vehicleno}
+            </div>
+          ))}
       </article>
     </AppScreen>
   );

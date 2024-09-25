@@ -28,7 +28,7 @@ export async function postBusCode(body: postBusCodeRequest) {
 // 버스 번호 입력하기
 
 export async function postBusNum(body: postBusNumRequest) {
-  const url = createRequestURL(`/driver/code`);
+  const url = createRequestURL(`/driver/bus-search`);
   try {
     const data: AxiosResponse<postBusNumResponse> = await axiosInstance.post(
       url,
@@ -44,7 +44,7 @@ export async function postBusNum(body: postBusNumRequest) {
 // 버스 번호 입력하기
 
 export async function postBusInfo(body: postBusInfoRequest) {
-  const url = createRequestURL(`/driver/code`);
+  const url = createRequestURL(`/driver/busId`);
   try {
     const data: AxiosResponse<postBusInfoResponse> = await axiosInstance.post(
       url,

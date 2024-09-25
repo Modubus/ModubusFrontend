@@ -1,3 +1,4 @@
+import { postBusCode } from "@src/api/driver/post";
 import TextInput from "@src/components/basic/TextInput";
 import { useDriveFlow } from "@src/stackflow/driverStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
@@ -5,26 +6,41 @@ import { ActivityComponentType } from "@stackflow/react";
 import { useEffect, useRef, useState } from "react";
 
 // home(버기)1, 버스 검색&등록 페이지
+
+export type busIdParamsType = {
+  id: number;
+  name: string;
+};
+
 const SearchCodePage: ActivityComponentType = () => {
   const [input, setInput] = useState<string>("");
   const { push } = useDriveFlow();
   const [isShowMatchResult, setIsShowMatchResult] = useState<boolean>(false);
-  const [company, setCompany] = useState<string>("");
+  const [companyName, setCompanyName] = useState<string>("");
+  const [companyId, setCompanyId] = useState<number>();
   const handleBusItemClick = () => {
-    push("EnrollBusNumPage", []);
+    const busIdParams = { id: companyId, name: companyName } as busIdParamsType;
+    push("EnrollBusNumPage", busIdParams);
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = async (
+    event: React.KeyboardEvent<HTMLInputElement>
+  ) => {
     if (event.key === "Enter") {
-      // TODO: api 연동
-      setCompany("관악교통");
-      setIsShowMatchResult(true);
+      const body = { code: input };
+      const res = await postBusCode(body);
+      if (res && res.data) {
+        setIsShowMatchResult(true);
+        setCompanyName(res.data.name);
+        setCompanyId(res.data.id);
+      }
     }
   };
+
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
@@ -46,7 +62,7 @@ const SearchCodePage: ActivityComponentType = () => {
             className="w-full text-left text-Regular45 border-b-[1px] border-b-darkGray3 py-[1rem]"
             onClick={handleBusItemClick}
           >
-            {company}
+            {companyName}
           </div>
         )}
       </article>

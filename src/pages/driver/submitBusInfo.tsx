@@ -1,20 +1,35 @@
+import { postBusInfo } from "@src/api/driver/post";
 import { useDriveFlow } from "@src/stackflow/driverStackFlow";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { ActivityComponentType } from "@stackflow/react";
 
-const SubmitBusInfo: ActivityComponentType = () => {
+type submitBusInfoParams = {
+  id: number;
+  name: string;
+  vehicleno: string;
+};
+
+const SubmitBusInfo: ActivityComponentType<submitBusInfoParams> = ({
+  params,
+}) => {
   const { push } = useDriveFlow();
-  const handleButtonClick = () => {
-    push("BusOngoingPage", {});
+  const handleButtonClick = async () => {
+    const res = await postBusInfo({
+      busCompanyId: params.id,
+      vehicleno: params.vehicleno,
+    });
+    if (res) {
+      push("BusOngoingPage", { id: res.data.busId });
+    }
   };
   return (
     <AppScreen backgroundColor="white">
       <article className="w-full h-full flex flex-col items-center px-[2rem] gap-[1rem] relative">
         <div className="text-Bold45 text-left w-full py-[0.62rem] border-b-[7px] mt-[2.87rem]">
-          관악교통
+          {params.name}
         </div>
         <div className="text-Bold45 text-left w-full py-[0.62rem] border-b-[7px]">
-          3317 - 01
+          {params.vehicleno}
         </div>
 
         <button
