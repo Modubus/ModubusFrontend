@@ -131,7 +131,7 @@ function KakaoFindPlace({ isStart = true }: { isStart?: boolean }) {
             value={keyword}
             onChange={handleKeywordChange}
             id="keyword"
-            size={15}
+            className="w-full"
           />
         </div>
 

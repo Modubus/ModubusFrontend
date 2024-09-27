@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -14,8 +15,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --font-size-45: 2.8125rem;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0px 4px 9.3px 0px rgba(0, 0, 0, 0.25);
+  height: 2.8175rem;
+  width: 2.8175rem;
+  border-radius: 100%;
 }
 
+.text-Bold45,
+.text-Regular45 {
+  font-size: var(--font-size-45) !important;
+}
 a {
   font-weight: 500;
   color: #646cff;
