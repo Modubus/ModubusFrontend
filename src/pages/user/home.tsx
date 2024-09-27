@@ -22,7 +22,7 @@ const UserHomePage: ActivityComponentType = () => {
   return (
     <AppScreen
       backgroundColor="#727272"
-      appBar={{ title: "", iconColor: "white", height: "3rem" }}
+      // appBar={{ title: "", iconColor: "white", height: "3rem" }}
     >
       <article className="w-full h-full relative flex flex-col items-center justify-start">
         <section className="w-full h-full text-Bold45 flex flex-col gap-[7px]">

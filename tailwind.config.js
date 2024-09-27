@@ -91,6 +91,15 @@ export default {
       fontFamily: {
         body: ["Open Sans", "sans-serif"],
       },
+      keyframes: {
+        scaleUp: {
+          "0%": { transform: "scale(0.6)" },
+          "100%": { transform: "scale(1)" },
+        },
+      },
+      animation: {
+        scaleUp: "scaleUp 1s ease-in-out",
+      },
     },
   },
   plugins: [scrollbarHide],
