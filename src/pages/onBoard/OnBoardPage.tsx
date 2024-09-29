@@ -21,6 +21,7 @@ const OnBoardPage: ActivityComponentType = () => {
           <span className="text-Bold45">버스 기사</span>
           <span className="text-Regular45">입니다.</span>
         </button>
+        
       </article>
     </AppScreen>
   );

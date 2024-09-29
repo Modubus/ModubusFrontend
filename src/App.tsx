@@ -6,6 +6,7 @@ import { UserStack } from "./stackflow/userStackFlow";
 import { DriverStack } from "./stackflow/driverStackFlow";
 import { useEffect, useState } from "react";
 import SplashScreen from "./components/basic/SplashScreen";
+import PWAInstallPrompt from "./pages/onBoard/PWAInstallPrompt";
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
   }, []);
   return (
     <QueryClientProvider client={queryClient}>
+      <PWAInstallPrompt></PWAInstallPrompt>
       {isLoading ? (
         <SplashScreen />
       ) : (
