@@ -9,7 +9,7 @@ import SplashScreen from "./components/basic/SplashScreen";
 
 function App() {
   const queryClient = new QueryClient();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   // 로딩 상태를 관리하는 useEffect
   useEffect(() => {
     // 실제 데이터 로드나 초기화 로직을 여기에 추가
