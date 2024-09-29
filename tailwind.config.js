@@ -16,10 +16,13 @@ export default {
       mutegreen03: "#727272",
       busBlack: "#121212",
       darkGray: "#1A1A1A",
+      darkGray3: "#B4B4B4",
       warn: "#FF6869",
       lightRed: "#FF0001",
       black: "#000",
       white: "#fff",
+      busColor: "#417FF9",
+      lightGrey: "#dbdbdb",
     },
     fontSize: {
       Bold16: [

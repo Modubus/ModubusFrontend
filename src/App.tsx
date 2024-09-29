@@ -18,7 +18,6 @@ function App() {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setIsLoading(false);
     };
-
     loadAppData();
   }, []);
   return (
